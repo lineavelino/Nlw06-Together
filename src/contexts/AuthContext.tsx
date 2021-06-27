@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { auth, firebase } from "../services/firebase";
+import { ThemeContextProvider } from "./ThemeContext";
 
 type User = {
     id: string;
@@ -63,8 +64,10 @@ export function AuthContextProvider(props: AuthContextProviderProps) {
     }
 
     return (
-        <AuthContext.Provider value={{ user, signInWithGoogle }}>
-            {props.children}
-        </AuthContext.Provider>
+        <ThemeContextProvider>
+            <AuthContext.Provider value={{ user, signInWithGoogle }}>
+                {props.children}
+            </AuthContext.Provider>
+        </ThemeContextProvider>
     );
 }
