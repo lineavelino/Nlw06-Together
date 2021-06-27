@@ -11,6 +11,7 @@ import { database } from '../services/firebase';
 import { useTheme } from '../hooks/useTheme';
 
 import '../styles/auth.scss';
+import { ButtonDark } from '../components/ButtonDark';
 
 export function Home() {
     const { theme, toggleTheme } = useTheme();
@@ -57,7 +58,6 @@ export function Home() {
             </aside>
             <main>
                 <div className="main-content">
-                    <button onClick={toggleTheme}>Toggle</button>
                     <img src={logoImg} alt="Letmeask" />
                     <button onClick={handleCreateRoom} className="create-room">
                         <img src={googleIconImg} alt="Logo do Google" />
@@ -77,6 +77,7 @@ export function Home() {
                     </form>
                 </div>
             </main>
+            <ButtonDark name="dark" isDark onClick={toggleTheme}></ButtonDark>
         </div>
     )
 }

@@ -34,3 +34,14 @@
         cursor: not-allowed;
     }
 }
+
+.dark {
+    background: transparent;
+    padding: 0;
+    align-self: flex-start;
+
+    > img {
+        max-height: 30px; 
+        margin: 0%;
+    }
+}

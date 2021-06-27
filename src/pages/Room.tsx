@@ -11,12 +11,15 @@ import { Question } from '../components/Question'
 import { useRoom } from '../hooks/useRoom';
 
 import '../styles/room.scss';
+import { ButtonDark } from '../components/ButtonDark';
+import { useTheme } from '../hooks/useTheme';
 
 type RoomParams = {
     id: string;
 }
 
 export function Room() {
+    const { theme, toggleTheme } = useTheme();
     const history = useHistory();
     const { user } = useAuth();
     const params = useParams<RoomParams>();
@@ -66,7 +69,7 @@ export function Room() {
     }
 
     return (
-        <div id="page-room">
+        <div id="page-room" className={theme}>
             <header>
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" />
@@ -74,7 +77,9 @@ export function Room() {
                         <RoomCode code={roomId} />
                         <Button isOutlined onClick={handleExitRoom}>Sair da sala</Button>
                     </div>
+                    <ButtonDark name="dark" isDark onClick={toggleTheme}></ButtonDark>
                 </div>
+
             </header>
 
             <main>
