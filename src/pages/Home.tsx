@@ -77,7 +77,9 @@ export function Home() {
                     </form>
                 </div>
             </main>
-            <ButtonDark name="dark" isDark onClick={toggleTheme}></ButtonDark>
+            <header>
+                <ButtonDark name="dark" isDark onClick={toggleTheme}></ButtonDark>
+            </header>
         </div>
     )
 }

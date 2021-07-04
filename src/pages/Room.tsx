@@ -71,15 +71,14 @@ export function Room() {
     return (
         <div id="page-room" className={theme}>
             <header>
+                <ButtonDark name="dark" isDark onClick={toggleTheme}></ButtonDark>
                 <div className="content">
                     <img src={logoImg} alt="Letmeask" />
                     <div>
                         <RoomCode code={roomId} />
                         <Button isOutlined onClick={handleExitRoom}>Sair da sala</Button>
                     </div>
-                    <ButtonDark name="dark" isDark onClick={toggleTheme}></ButtonDark>
                 </div>
-
             </header>
 
             <main>
